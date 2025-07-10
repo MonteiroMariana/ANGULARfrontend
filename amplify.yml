@@ -4,13 +4,14 @@ frontend:
     preBuild:
       commands:
         - npm ci
+        - npm run prebuild
     build:
       commands:
-        - npm run build -- --configuration=production
+        - npm run build
   artifacts:
-    baseDirectory: dist/contatos-app
+    baseDirectory: dist/contatos-app/browser
     files:
       - '**/*'
   cache:
     paths:
-      - node_modules/**/*
+      - node_modules/**/*      
